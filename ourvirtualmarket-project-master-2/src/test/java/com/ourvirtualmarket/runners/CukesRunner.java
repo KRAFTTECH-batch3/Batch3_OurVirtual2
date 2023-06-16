@@ -13,7 +13,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/ourvirtualmarket/steps_defs",
-        tags = "@Regression"
+        dryRun = false,
+        tags = "@B3VIR2-213"
 )
 public class CukesRunner {
 
