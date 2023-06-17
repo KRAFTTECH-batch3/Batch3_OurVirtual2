@@ -4,7 +4,13 @@ import com.ourvirtualmarket.utilities.BrowserUtils;
 import com.ourvirtualmarket.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
 public class ProductsPage extends BasePage{
+
+    @FindBy(xpath = "(//input[@value='Buy Now'])[1]")
+    public WebElement buyNowBtn;
+
 
     /**
      <h1> Navigate To Product </h1>
