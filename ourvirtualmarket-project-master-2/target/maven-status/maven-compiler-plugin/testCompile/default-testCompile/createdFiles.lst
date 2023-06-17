@@ -5,9 +5,11 @@ com\ourvirtualmarket\pages\LoginPage.class
 com\ourvirtualmarket\runners\CukesRunner.class
 com\ourvirtualmarket\pages\AlternativeAddToCartPage.class
 com\ourvirtualmarket\utilities\BrowserUtils$1.class
+com\ourvirtualmarket\steps_defs\WishList_StepDefs.class
 com\ourvirtualmarket\pages\ProductsPage.class
 com\ourvirtualmarket\steps_defs\Hooks.class
 com\ourvirtualmarket\pages\DashboardPage.class
+com\ourvirtualmarket\pages\WishListPage.class
 com\ourvirtualmarket\utilities\Driver.class
 com\ourvirtualmarket\pages\AccountLogoutPage.class
 com\ourvirtualmarket\pages\MyAccountPage.class

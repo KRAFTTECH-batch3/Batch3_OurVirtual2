@@ -1,5 +1,4 @@
 
-@Regression
 Feature: Ourvirtualmarket Alternative Add to cart Functions Tests
 
 
