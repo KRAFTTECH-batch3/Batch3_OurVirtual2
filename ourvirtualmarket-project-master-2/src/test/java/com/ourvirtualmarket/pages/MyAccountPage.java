@@ -13,4 +13,6 @@ public class MyAccountPage extends BasePage{
     public WebElement alternativeLogoutButton;
 
 
+
+
 }
