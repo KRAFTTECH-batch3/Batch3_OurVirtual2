@@ -6,6 +6,8 @@ import com.ourvirtualmarket.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 
 public class Return_StepDefs {
 
@@ -17,29 +19,51 @@ public class Return_StepDefs {
 
     @When("the user has bought a product")
     public void the_user_has_bought_a_product() {
-        productsPage.navigateToProduct("WAHL 7061-117 Lithium Lifeproof Mens Electric Shaver");
-        productsPage.buyNowBtn.click();
-        checkoutPage.makeCheckout();
-        BrowserUtils.clickWithJS(dashboardPage.closeButton);
+ //       returnPage.navigateToAlternativeMenu("Account");
+        Driver.get().findElement(By.xpath("//a[text()='View your order history']")).click();
+
+        String text = Driver.get().findElement(By.xpath("(//tbody//tr//td[text()='#118'])[1]")).getText();
+        if(text==null) productsPage.buyAProduct();
+        Assert.assertNotNull(Driver.get().findElement(By.xpath("(//tbody//tr//td[text()='#118'])[1]")));
     }
+
     @Given("the user visits the website")
     public void the_user_visits_the_website() {
-
-
-
+        alternativeAddToCartPage.goToHomePage();
     }
+
     @When("the user scrolls to the bottom of the page")
     public void the_user_scrolls_to_the_bottom_of_the_page() {
         BrowserUtils.scrollToElement(returnPage.returnsServiceFromFooterMenu);
 
     }
+
     @Then("the user should see the {string} link")
     public void the_user_should_see_the_link(String string) {
         returnPage.assertServiceIsThere("Returns");
-
         BrowserUtils.verifyElementDisplayed(returnPage.returnsServiceFromFooterMenu);
         BrowserUtils.waitFor(3);
     }
+
+    @Given("the user is on the website")
+    public void the_user_is_on_the_website() {
+        alternativeAddToCartPage.goToHomePage();
+    }
+
+    @When("the user clicks on the Returns link")
+    public void the_user_clicks_on_the_returns_link() {
+        BrowserUtils.scrollToElement(returnPage.returnsServiceFromFooterMenu);
+        BrowserUtils.clickWithJS(returnPage.returnsServiceFromFooterMenu);
+        BrowserUtils.waitFor(3);
+    }
+    @Then("the First Name, Last Name and E-Mail fields should be automatically filled")
+    public void the_first_name_last_name_and_e_mail_fields_should_be_automatically_filled() {
+        returnPage.assertTheFieldsShouldBeAutomaticallyFilled();
+    }
+
+
+
+
 
 }
 
