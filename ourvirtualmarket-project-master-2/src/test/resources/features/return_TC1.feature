@@ -1,6 +1,5 @@
-@return @B3VIR2-213
+@return1 @B3VIR2-213
 Feature: US 20: Return - TC_1 - Verify that the "Returns" link that the bottom of the page is displayed.
-
 
   #@PRECOND_B3VIR2-170
   Background:
@@ -15,3 +14,4 @@ Feature: US 20: Return - TC_1 - Verify that the "Returns" link that the bottom o
     Given the user visits the website
     When the user scrolls to the bottom of the page
     Then the user should see the "Returns" link
+
