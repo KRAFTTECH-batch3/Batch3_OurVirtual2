@@ -13,9 +13,9 @@ public class MyAccountPage extends BasePage{
     @FindBy(xpath = "//div[@class='list-group']/a[text()='Logout']")
     public WebElement alternativeLogoutButton;
 
-    public void goToAccountPage(){
 
-    }
+
+
 
 
 

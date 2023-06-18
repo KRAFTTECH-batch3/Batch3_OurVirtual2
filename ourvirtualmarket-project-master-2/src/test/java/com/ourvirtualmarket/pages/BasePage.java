@@ -121,10 +121,9 @@ public abstract class BasePage {
      @see <a href = "https://ourvirtualmarket.com/">Our Virtual Market</a>
      */
     public void navigateToAlternativeMenu(String menuName){
-        WebElement menuNameElement = Driver.get().findElement(By.xpath("//div[@id='so-groups']/a//span[text()='"+menuName+"']"));
-
+        WebElement menuNameElement = Driver.get().
+                findElement(By.xpath("//div[@id='so-groups']/a//span[text()='"+menuName+"']"));
         BrowserUtils.clickWithJS(menuNameElement);
- //       Driver.get().findElement(By.xpath("//div[@id='so-groups']/a//span[text()='"+menuName+"']"));
     }
 
 
