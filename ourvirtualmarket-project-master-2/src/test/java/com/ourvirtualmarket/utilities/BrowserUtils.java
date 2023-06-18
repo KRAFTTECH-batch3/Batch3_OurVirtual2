@@ -94,6 +94,18 @@ public class BrowserUtils {
     }
 
     /**
+     <h1> getText() </h1>
+     @param locator
+     @return return text from element
+     @author Busra
+     @see <a href = "https://ourvirtualmarket.com/">Our Virtual Market</a>
+      *  */
+    public static String getText(By locator) {
+        WebElement element = Driver.get().findElement(locator);
+        return element.getText();
+    }
+
+    /**
      * Performs a pause
      *
      * @param seconds
