@@ -45,6 +45,26 @@ public class Return_StepDefs {
         BrowserUtils.waitFor(3);
     }
 
+    @Given("the user is on the website")
+    public void the_user_is_on_the_website() {
+        alternativeAddToCartPage.goToHomePage();
+    }
+
+    @When("the user clicks on the Returns link")
+    public void the_user_clicks_on_the_returns_link() {
+        BrowserUtils.scrollToElement(returnPage.returnsServiceFromFooterMenu);
+        BrowserUtils.clickWithJS(returnPage.returnsServiceFromFooterMenu);
+        BrowserUtils.waitFor(3);
+    }
+    @Then("the First Name, Last Name and E-Mail fields should be automatically filled")
+    public void the_first_name_last_name_and_e_mail_fields_should_be_automatically_filled() {
+        returnPage.assertTheFieldsShouldBeAutomaticallyFilled();
+    }
+
+
+
+
+
 }
 
 
