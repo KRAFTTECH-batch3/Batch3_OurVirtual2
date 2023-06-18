@@ -1,4 +1,4 @@
-@B3VIR2-213
+@return3 @B3VIR2-213
 Feature: US 20: Return - TC_3 - Verify that the user notification message is displayed
 
    #@PRECOND_B3VIR2-170
@@ -13,5 +13,5 @@ Feature: US 20: Return - TC_3 - Verify that the user notification message is dis
   Scenario: Verify user notification message is displayed on successful submission
     Given the user is on the website
     And the user has entered all the necessary information correctly
-    When the user clicks the "Submit" button
+    When the user clicks the Submit button
     Then the user should see a notification message confirming the successful submission

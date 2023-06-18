@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 
 public class ReturnsPage extends BasePage{
 
+    DashboardPage dashboardPage = new DashboardPage();
+
     @FindBy(xpath = "//input[@id='input-firstname']")
     public WebElement firstname;
 
@@ -36,10 +38,20 @@ public class ReturnsPage extends BasePage{
     @FindBy(xpath = "//input[@value='Submit']")
     public WebElement submitBtn;
 
+    public void saveOrderInformations(){
+
+    }
+
     public void assertTheFieldsShouldBeAutomaticallyFilled(){
         Assert.assertNotNull(firstname);
         Assert.assertNotNull(lastname);
         Assert.assertNotNull(email);
+    }
+
+    public void fillTheReturnForm(){
+        dashboardPage.homeButton.click();
+        dashboardPage.navigateToAlternativeMenu("Account");
+
     }
 
 

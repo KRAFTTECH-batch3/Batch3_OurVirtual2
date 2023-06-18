@@ -26,7 +26,6 @@ public class ProductsPage extends BasePage{
         BrowserUtils.clickWithJS(product);
     }
 
-
     /**
      <h1> Buy a Product </h1>
      bazı senaryolarda precondition olarak kullanıcının ürün almış olması gerekmektedir.
