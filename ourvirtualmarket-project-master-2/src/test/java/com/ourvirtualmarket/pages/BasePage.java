@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public abstract class BasePage {
 
     public BasePage() {
@@ -54,7 +56,8 @@ public abstract class BasePage {
     @FindBy(xpath = "//div[@class='box-service box-footer']//a[contains(text(),'Returns')]")
     public WebElement returnsServiceFromFooterMenu;
 
-
+    @FindBy(xpath = "//div[@id='so-groups']/a")
+    public List<WebElement> alternativeMenuAtTheMiddleRight;
 
 
     /**
@@ -107,6 +110,21 @@ public abstract class BasePage {
         String actualServiceTextName = Driver.get().findElement(By.xpath("//div[@class='box-service box-footer']//a[contains(text(),'" + serviceName + "')]"))
                 .getText();
         Assert.assertEquals(expectedServiceTextName,actualServiceTextName);
+    }
+
+
+    /**
+     <h1> Navigate to alternative menu </h1>
+     @param menuName Categories, Cart, Account, Search, Recent View, Go to Top
+     @return her sayfada ortada sağda gözüken alternatif menü'de gitmek istediğiniz sayfanın menuName'ini parametreye girmeniz yeterlidir.
+     @author Ferid
+     @see <a href = "https://ourvirtualmarket.com/">Our Virtual Market</a>
+     */
+    public void navigateToAlternativeMenu(String menuName){
+        WebElement menuNameElement = Driver.get().findElement(By.xpath("//div[@id='so-groups']/a//span[text()='"+menuName+"']"));
+
+        BrowserUtils.clickWithJS(menuNameElement);
+ //       Driver.get().findElement(By.xpath("//div[@id='so-groups']/a//span[text()='"+menuName+"']"));
     }
 
 
