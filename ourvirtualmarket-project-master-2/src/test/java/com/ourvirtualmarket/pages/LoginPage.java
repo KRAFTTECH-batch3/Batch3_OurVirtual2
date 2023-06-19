@@ -25,8 +25,15 @@ public class LoginPage extends BasePage {
         loginBtn.click();
     }
 
+    /**
+     <h1> login with parameters </h1>
+     @param userEmail, password
+     @return kullanlan mail ve şifreye göre siteye login olmanızı sağlar
+     @author Busra
+     @see <a href = "https://ourvirtualmarket.com/">Our Virtual Market</a>
+      *  */
     public void login(String userEmail, String password){
-        BrowserUtils.waitForClickablility(loginBtn,3);
+        BrowserUtils.waitFor(2);
         userEmailInputBox.sendKeys(userEmail);
         passwordInputBox.sendKeys(password);
         loginBtn.click();

@@ -16,6 +16,7 @@ public class GoToTop_StepDefs {
     GoToTopPage goToTopButtonPage=new GoToTopPage();
     @Given("The user on the home page")
     public void theUserOnTheHomePage() {
+
         Driver.get().get(ConfigurationReader.get("url"));
     }
 

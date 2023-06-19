@@ -3,10 +3,13 @@ package com.ourvirtualmarket.pages;
 
 import com.ourvirtualmarket.utilities.BrowserUtils;
 import com.ourvirtualmarket.utilities.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public abstract class BasePage {
 
@@ -59,6 +62,17 @@ public abstract class BasePage {
      * */
     @FindBy(partialLinkText = "Checkout")
     public WebElement checkoutButton;
+    @FindBy(xpath = "//div[@class='box-service box-footer']//a[contains(text(),'Returns')]")
+    public WebElement returnsServiceFromFooterMenu;
+
+    @FindBy(xpath = "//div[@id='so-groups']/a")
+    public List<WebElement> alternativeMenuAtTheMiddleRight;
+
+    @FindBy(xpath = "//a[@class='account-url'and @href='https://ourvirtualmarket.com/index.php?route=account/account']")
+    public WebElement accountBtnFromPopupMyAccount;
+
+
+
 
     /**
      <h1> Navigate To Module </h1>

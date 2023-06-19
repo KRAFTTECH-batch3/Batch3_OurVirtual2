@@ -17,9 +17,18 @@ public class DashboardPage extends BasePage{
     @FindBy(css = ".lazyautosizes.lazyloaded")
     public WebElement yourStoreBtn;
 
+
+    /**
+     <h1> Close the Pop Up Page </h1>
+     @return Ana sayfa açıldığında karşınıza gelen pop upı kapatmanızı sağlar.
+     @author Busra
+     @see <a href = "https://ourvirtualmarket.com/">Our Virtual Market</a>
+      *  */
     public void closePopUp(){
         closeButton.click();
     }
+
+
 
 
 }

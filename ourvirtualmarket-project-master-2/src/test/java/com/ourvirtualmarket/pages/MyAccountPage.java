@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class MyAccountPage extends BasePage{
 
+
     @FindBy(partialLinkText = "Edit your account information")
     public WebElement editYourAccountInformationButton;
 
@@ -34,5 +35,13 @@ public class MyAccountPage extends BasePage{
         BrowserUtils.waitForClickablility(element,5);
         element.click();
     }
+
+
+
+
+
+
+
+
 
 }
