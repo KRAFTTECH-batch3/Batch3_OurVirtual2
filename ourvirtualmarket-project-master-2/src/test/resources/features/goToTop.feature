@@ -9,3 +9,5 @@ Feature: Go to top page with button
     Given The user scrolls down the page
     When The user hover the button,text appears Go To Top and click button
     Then Verify that the user top on page
+
+    Scenario: Scenario 2
