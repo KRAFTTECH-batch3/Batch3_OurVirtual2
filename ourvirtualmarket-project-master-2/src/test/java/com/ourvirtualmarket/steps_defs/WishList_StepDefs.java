@@ -69,9 +69,8 @@ public class WishList_StepDefs {
     }
 
 
-
     @Given("The User remove items from wish list")
-    public void theUserRemoveItemsFromWishList() throws InterruptedException {
+    public void the_user_remove_items_from_wish_list() throws InterruptedException {
         BrowserUtils.clickWithJS(wishListPage.wishListEmpty);
         //wishListPage.wishListEmpty.click();
         Thread.sleep(3000);
@@ -83,15 +82,37 @@ public class WishList_StepDefs {
             Thread.sleep(3000);
 
         }
-
     }
 
     @Then("The user should verify the wishlist is empty")
-    public void theUserShouldVerifyTheWishlistIsEmpty() throws InterruptedException {
+    public void the_user_should_verify_the_wishlist_is_empty() throws InterruptedException {
         Assert.assertTrue(wishListPage.emptyMessage.getText().equals("Your wish list is empty."));
 
         wishListPage.market.click();
         sleep(2000);
         dashboardPage.closePopUp();
     }
+
+    @Given("The User should add items to the addToCart")
+    public void the_user_should_add_items_to_the_add_to_cart() throws InterruptedException {
+        BrowserUtils.clickWithJS(wishListPage.wishListEmpty);
+        Thread.sleep(3000);
+        for (int i=0; i<wishListPage.addList.size(); i++){
+            wishListPage.addList.get(i).click();
+            Thread.sleep(2000);
+            wishListPage.close.click();
+            Thread.sleep(1000);
+
+        }
+
+
+    }
+    @Then("The user should verify the items in the addToCart")
+    public void the_user_should_verify_the_items_in_the_add_to_cart() throws InterruptedException {
+        wishListPage.add.click();
+        Thread.sleep(2000);
+        wishListPage.viewCard.click();
+    }
+
+
 }
