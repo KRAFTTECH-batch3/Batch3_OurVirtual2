@@ -4,6 +4,8 @@ import com.ourvirtualmarket.pages.DashboardPage;
 import com.ourvirtualmarket.pages.LoginPage;
 import com.ourvirtualmarket.pages.WishListPage;
 import com.ourvirtualmarket.utilities.BrowserUtils;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -68,5 +70,28 @@ public class WishList_StepDefs {
 
 
 
+    @Given("The User remove items from wish list")
+    public void theUserRemoveItemsFromWishList() throws InterruptedException {
+        BrowserUtils.clickWithJS(wishListPage.wishListEmpty);
+        //wishListPage.wishListEmpty.click();
+        Thread.sleep(3000);
 
+        while (wishListPage.myWishList.contains(wishListPage.removeButton)) {
+
+            wishListPage.removeButton.click();
+
+            Thread.sleep(3000);
+
+        }
+
+    }
+
+    @Then("The user should verify the wishlist is empty")
+    public void theUserShouldVerifyTheWishlistIsEmpty() throws InterruptedException {
+        Assert.assertTrue(wishListPage.emptyMessage.getText().equals("Your wish list is empty."));
+
+        wishListPage.market.click();
+        sleep(2000);
+        dashboardPage.closePopUp();
+    }
 }

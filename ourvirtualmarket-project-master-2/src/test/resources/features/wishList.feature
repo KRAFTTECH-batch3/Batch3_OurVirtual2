@@ -7,7 +7,6 @@ Feature: add wish list
 
 
     Scenario:  Scenario: The User is Items are Removed From Wish List
-      And The User add items to the wishlist
-      Then The User remove items from wish list
-      And The user should verify the wishlist is empty
+      Given The User remove items from wish list
+      Then The user should verify the wishlist is empty
 
