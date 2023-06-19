@@ -17,6 +17,8 @@ public class ReturnsPage extends BasePage{
 
     DashboardPage dashboardPage = new DashboardPage();
 
+    OrderHistoryPage orderHistoryPage = new OrderHistoryPage();
+
     @FindBy(xpath = "//input[@id='input-firstname']")
     public WebElement firstname;
 
@@ -58,14 +60,25 @@ public class ReturnsPage extends BasePage{
     }
 
     public void fillTheReturnForm(){
-        Map<String,String> orderInformations;
+        Map<String,String> orderInformations = new HashMap<>();
         dashboardPage.homeButton.click();
         dashboardPage.navigateToAlternativeMenu("Account");
         WebElement viewOrderBtn = Driver.get().findElement(By.xpath("//a[text()='View your order history']"));
         BrowserUtils.clickWithJS(viewOrderBtn);
+
+        orderInformations.put("Order ID",orderHistoryPage.firstOrderID.getText());
+        orderInformations.put("Order Date",orderHistoryPage.firstOrderDate.getText());
+
+
         WebElement viewBtn = Driver.get().findElement(By.xpath("//a[@href='https://ourvirtualmarket.com/index.php?route=account/order/info&order_id=118']"));
         BrowserUtils.clickWithJS(viewBtn);
-        orderInformations = orderInformationPage.getAllInformation();
+
+        Map<String,String> orderInformations2 = new HashMap<>();
+
+        // product name ve product code locate edilecek. bilgileri orderInformarion2'nin içine atılacak
+        // ve 2 map birleştirilecek. sonrasında form doldurulacak.
+
+//        orderInformations = orderInformationPage.getAllInformation();
 
         orderID.sendKeys(orderInformations.get("Order ID"));
         orderDate.sendKeys(orderInformations.get("Order Date"));
