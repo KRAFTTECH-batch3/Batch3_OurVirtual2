@@ -20,7 +20,7 @@ Feature: Add to Cart
     Then The user should be able to see added product in the shopping cart
     Examples:
       | product name             | price   | availability status | viewes|
-      | ASUS ROG STRIX GS-AX3000 | $156.00 | In Stock            | 488 times|
+      | ASUS ROG STRIX GS-AX3000 | $156.00 | In Stock            | 490 times|
 
 
 
