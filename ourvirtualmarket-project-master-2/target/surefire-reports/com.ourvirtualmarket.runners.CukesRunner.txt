@@ -1,4 +1,52 @@
 -------------------------------------------------------------------------------
 Test set: com.ourvirtualmarket.runners.CukesRunner
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 117.077 s - in com.ourvirtualmarket.runners.CukesRunner
+Tests run: 5, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 118.772 s <<< FAILURE! - in com.ourvirtualmarket.runners.CukesRunner
+Logout Test Set.  Time elapsed: 25.449 s  <<< FAILURE!
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertFalse(Assert.java:65)
+	at org.junit.Assert.assertFalse(Assert.java:75)
+	at com.ourvirtualmarket.steps_defs.Logout_StepDefs.verify_that_and_button_is_visible_and_button_is_not_visible(Logout_StepDefs.java:67)
+	at ✽.Verify that Login and Register button is visible and Logout button is not visible(file:///C:/Users/emrek/IdeaProjects/Batch3_OurVirtual2/ourvirtualmarket-project-master-2/src/test/resources/features/logoutFunctionality.feature:14)
+
+Logout Test Set.Logout Directly Test - 2  Time elapsed: 17.508 s  <<< FAILURE!
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertFalse(Assert.java:65)
+	at org.junit.Assert.assertFalse(Assert.java:75)
+	at com.ourvirtualmarket.steps_defs.Logout_StepDefs.verify_that_and_button_is_visible_and_button_is_not_visible(Logout_StepDefs.java:67)
+	at ✽.Verify that Login and Register button is visible and Logout button is not visible(file:///C:/Users/emrek/IdeaProjects/Batch3_OurVirtual2/ourvirtualmarket-project-master-2/src/test/resources/features/logoutFunctionality.feature:24)
+
+Logout Test Set.Logout Test After add an Item to Cart  Time elapsed: 27.612 s  <<< FAILURE!
+org.junit.ComparisonFailure: 
+expected:<[Your shopping cart is empty!]> but was:<[Cello C3220G 32" LED-backlit LCD TV x 14 $3,626.00
+Belkin - Network device mounting bracket x 10 $2,500.00
+Belkin - Network device mounting bracket x 4 $700.00
+View Cart
+Checkout]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.ourvirtualmarket.steps_defs.Logout_StepDefs.verifyThatMyCartIsEmpty(Logout_StepDefs.java:114)
+	at ✽.Verify that My cart is empty(file:///C:/Users/emrek/IdeaProjects/Batch3_OurVirtual2/ourvirtualmarket-project-master-2/src/test/resources/features/logoutFunctionality.feature:39)
+
+Logout Test Set.Logout Test When at Shopping Cart  Time elapsed: 27.722 s  <<< FAILURE!
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertFalse(Assert.java:65)
+	at org.junit.Assert.assertFalse(Assert.java:75)
+	at com.ourvirtualmarket.steps_defs.Logout_StepDefs.verifyThatShoppingCartPageIsNOTVisible(Logout_StepDefs.java:122)
+	at ✽.Verify that Shopping cart page is NOT visible(file:///C:/Users/emrek/IdeaProjects/Batch3_OurVirtual2/ourvirtualmarket-project-master-2/src/test/resources/features/logoutFunctionality.feature:53)
+
+Logout Test Set.Logout Test When at My Account Information Page  Time elapsed: 19.483 s  <<< FAILURE!
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertFalse(Assert.java:65)
+	at org.junit.Assert.assertFalse(Assert.java:75)
+	at com.ourvirtualmarket.steps_defs.Logout_StepDefs.verifyThatMyAccountInformationIsNOTVisible(Logout_StepDefs.java:150)
+	at ✽.Verify that My Account Information is NOT visible(file:///C:/Users/emrek/IdeaProjects/Batch3_OurVirtual2/ourvirtualmarket-project-master-2/src/test/resources/features/logoutFunctionality.feature:65)
+

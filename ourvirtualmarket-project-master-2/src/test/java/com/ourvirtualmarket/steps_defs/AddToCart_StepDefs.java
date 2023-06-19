@@ -1,16 +1,21 @@
 package com.ourvirtualmarket.steps_defs;
 
 import com.ourvirtualmarket.pages.DashboardPage;
+import com.ourvirtualmarket.pages.ProductsPage;
+import com.ourvirtualmarket.utilities.BrowserUtils;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class AddToCart_StepDefs {
 
-    DashboardPage dashboardPage = new DashboardPage();
+    DashboardPage dashboardPage;// = new DashboardPage();
+    ProductsPage productsPage;// = new ProductsPage();
 
     @Given("The user is on the homepage")
     public void the_user_is_on_the_homepage() {
+        dashboardPage = new DashboardPage();
         dashboardPage.closePopUp();
     }
 
@@ -41,7 +46,8 @@ public class AddToCart_StepDefs {
 
     @When("The user clicks add to cart button")
     public void the_user_clicks_add_to_cart_button() {
-
+        productsPage = new ProductsPage();
+        BrowserUtils.clickWithJS(productsPage.addToCartButton_OnProductPage);
     }
 
     @Then("The user should be able to see the pop up page about added product")
@@ -58,6 +64,34 @@ public class AddToCart_StepDefs {
     public void the_user_should_be_able_to_see_added_product_in_the_shopping_cart() {
 
     }
+    @And("The user close the Added to cart successfully popup")
+    public void theUserCloseTheAddedToCartSuccessfullyPopup() {
+        productsPage = new ProductsPage();
+        BrowserUtils.waitForClickablility(productsPage.closeTheSuccessPopUpButton,5);
+        productsPage.closeTheSuccessPopUpButton.click();
+    }
+
+    @When("The user hover the My Cart")
+    public void theUserHoverTheMyCart() {
+        dashboardPage = new DashboardPage();
+        BrowserUtils.hover(dashboardPage.myCartButton);
+        BrowserUtils.waitFor(1);
+    }
+
+    @And("The user hover the {string} and click the Add to Cart button on the product")
+    public void theUserHoverAndClickTheAddToCartButtonOnTheProduct(String productName) {
+        productsPage = new ProductsPage();
+        productsPage.clickTheAddToCartButtonOnTheProduct(productName);
+    }
+
+
+    @When("The user click the View Cart")
+    public void theUserClickTheViewCart() {
+        dashboardPage= new DashboardPage();
+        BrowserUtils.clickWithJS(dashboardPage.viewCartButton);
+    }
+
+
 }
 
 

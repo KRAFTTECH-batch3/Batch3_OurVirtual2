@@ -1,6 +1,7 @@
 package com.ourvirtualmarket.pages;
 
 
+import com.ourvirtualmarket.utilities.BrowserUtils;
 import com.ourvirtualmarket.utilities.ConfigurationReader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,6 +26,7 @@ public class LoginPage extends BasePage {
     }
 
     public void login(String userEmail, String password){
+        BrowserUtils.waitForClickablility(loginBtn,3);
         userEmailInputBox.sendKeys(userEmail);
         passwordInputBox.sendKeys(password);
         loginBtn.click();

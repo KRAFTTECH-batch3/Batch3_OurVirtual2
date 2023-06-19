@@ -2,7 +2,6 @@
 Feature: US 20: Return - TC_1 - Verify that the "Returns" link that the bottom of the page is displayed.
 
 
-  Background:
 		#@PRECOND_B3VIR2-170
   Background:
     Given The user is on the homepage
