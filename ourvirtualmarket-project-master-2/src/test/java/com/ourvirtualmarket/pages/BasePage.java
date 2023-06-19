@@ -59,6 +59,11 @@ public abstract class BasePage {
     @FindBy(xpath = "//div[@id='so-groups']/a")
     public List<WebElement> alternativeMenuAtTheMiddleRight;
 
+    @FindBy(xpath = "//a[@class='account-url'and @href='https://ourvirtualmarket.com/index.php?route=account/account']")
+    public WebElement accountBtnFromPopupMyAccount;
+
+
+
 
     /**
         <h1> Navigate To Module </h1>
@@ -124,6 +129,7 @@ public abstract class BasePage {
         WebElement menuNameElement = Driver.get().
                 findElement(By.xpath("//div[@id='so-groups']/a//span[text()='"+menuName+"']"));
         BrowserUtils.clickWithJS(menuNameElement);
+        BrowserUtils.clickWithJS(accountBtnFromPopupMyAccount);
     }
 
 

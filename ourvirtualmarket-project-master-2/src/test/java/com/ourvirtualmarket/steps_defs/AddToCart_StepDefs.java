@@ -25,6 +25,7 @@ public class AddToCart_StepDefs {
         dashboardPage.navigateToModule(moduleName);
     }
 
+
     @When("The user select the third product")
     public void the_user_select_the_third_product() {
         productsPage.navigateWithProductNumber("3");
@@ -65,6 +66,7 @@ public class AddToCart_StepDefs {
         productsPage.verifyTheProductInMyCartIcon();
         softAssertions.assertAll();
     }
+
 
 
 

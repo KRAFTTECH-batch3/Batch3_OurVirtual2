@@ -1,8 +1,15 @@
 package com.ourvirtualmarket.pages;
 
+import com.ourvirtualmarket.utilities.BrowserUtils;
+import com.ourvirtualmarket.utilities.Driver;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class ReturnsPage extends BasePage{
 
@@ -49,8 +56,19 @@ public class ReturnsPage extends BasePage{
     }
 
     public void fillTheReturnForm(){
+        Map<String,String> orderInformations = new HashMap<>();
         dashboardPage.homeButton.click();
         dashboardPage.navigateToAlternativeMenu("Account");
+        WebElement viewOrderBtn = Driver.get().findElement(By.xpath("//a[text()='View your order history']"));
+        BrowserUtils.clickWithJS(viewOrderBtn);
+        WebElement viewBtn = Driver.get().findElement(By.xpath("//a[@href='https://ourvirtualmarket.com/index.php?route=account/order/info&order_id=118']"));
+        BrowserUtils.clickWithJS(viewBtn);
+
+//        orderInformations.put("Order ID",orderID.getText());
+
+
+
+
 
     }
 
