@@ -35,7 +35,6 @@ public class Return_StepDefs {
     @When("the user scrolls to the bottom of the page")
     public void the_user_scrolls_to_the_bottom_of_the_page() {
         BrowserUtils.scrollToElement(returnPage.returnsServiceFromFooterMenu);
-
     }
 
     @Then("the user should see the {string} link")
@@ -63,17 +62,16 @@ public class Return_StepDefs {
 
     @Given("the user has entered all the necessary information correctly")
     public void the_user_has_entered_all_the_necessary_information_correctly() {
-
-
-
+        returnPage.fillTheReturnForm();
     }
     @When("the user clicks the Submit button")
     public void the_user_clicks_the_submit_button() {
-
+        returnPage.submitBtn.click();
     }
+
     @Then("the user should see a notification message confirming the successful submission")
     public void the_user_should_see_a_notification_message_confirming_the_successful_submission() {
-
+        returnPage.assertSuccessfulReturnMessage();
     }
 
 

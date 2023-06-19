@@ -1,6 +1,7 @@
 package com.ourvirtualmarket.pages;
 
 import com.ourvirtualmarket.utilities.BrowserUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -23,7 +24,16 @@ public class OrderInformationPage extends BasePage {
 
     public Map<String,String> getAllInformation(){
         Map<String,String> allInformation = new HashMap<>();
-        allInformation.put("Order ID", BrowserUtils.getText());
+        allInformation.put("Order ID", orderID.getAttribute("value"));
+        allInformation.put("Order Date", orderDate.getText());
+        allInformation.put("Product Name", productName.getText());
+        allInformation.put("Product Code", productModel.getText());
+
+        for (String value : allInformation.values()) {
+            System.out.println(value);
+        }
+
+        return allInformation;
     }
 
 
