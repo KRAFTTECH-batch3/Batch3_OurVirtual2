@@ -24,9 +24,9 @@ public class WishListPage extends BasePage{
         while (myWishList.contains(removeButton)){
             removeButton.click();
             Thread.sleep(3000);
-
         }
     }
+
     public void addItems() throws InterruptedException {
         if(!wishList.getText().contains("0")) {
             wishListEmpty.click();

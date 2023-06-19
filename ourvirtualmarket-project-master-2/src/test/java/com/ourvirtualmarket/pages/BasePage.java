@@ -3,10 +3,13 @@ package com.ourvirtualmarket.pages;
 
 import com.ourvirtualmarket.utilities.BrowserUtils;
 import com.ourvirtualmarket.utilities.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public abstract class BasePage {
 
@@ -50,6 +53,17 @@ public abstract class BasePage {
     @FindBy(xpath = "(//a[text()='Register'])[2]")
     public WebElement registerButton;
 
+    @FindBy(xpath = "//div[@class='box-service box-footer']//a[contains(text(),'Returns')]")
+    public WebElement returnsServiceFromFooterMenu;
+
+    @FindBy(xpath = "//div[@id='so-groups']/a")
+    public List<WebElement> alternativeMenuAtTheMiddleRight;
+
+    @FindBy(xpath = "//a[@class='account-url'and @href='https://ourvirtualmarket.com/index.php?route=account/account']")
+    public WebElement accountBtnFromPopupMyAccount;
+
+
+
 
     /**
         <h1> Navigate To Module </h1>
@@ -72,5 +86,54 @@ public abstract class BasePage {
         BrowserUtils.waitForClickablility(logoutButton,5);
         logoutButton.click();
     }
+
+    /**
+     <h1> Navigate To Service </h1>
+     @param service  Contact Us, Returns, Support, Site Map, Customer Service, Custom Link
+     @return footer menüde(sayfanın en altında) yer alan ve gitmek istediğiniz service ismini parametreye girerek gitmenizi sağlar
+     @author Ferid
+     @see <a href = "https://ourvirtualmarket.com/">Our Virtual Market</a>
+      *  */
+
+    public void navigateToService(String service){
+        Driver.get().
+                findElement(By.xpath("//div[@class='box-service box-footer']//a[contains(text(),'"+service+"')]"))
+                .click();
+    }
+
+    /**
+     <h1> Assert service is there </h1>
+     @param serviceName  Contact Us, Returns, Support, Site Map, Customer Service, Custom Link
+     @return footer menüde(sayfanın en altında) gitmek istediğiniz service'in var olup olmadığını assert etmek için
+     service ismini parametreye girmeniz yeterlidir.
+     @author Ferid
+     @see <a href = "https://ourvirtualmarket.com/">Our Virtual Market</a>
+     */
+
+    public void assertServiceIsThere(String serviceName) {
+        String expectedServiceTextName = serviceName;
+        String actualServiceTextName = Driver.get().findElement(By.xpath("//div[@class='box-service box-footer']//a[contains(text(),'" + serviceName + "')]"))
+                .getText();
+        Assert.assertEquals(expectedServiceTextName,actualServiceTextName);
+    }
+
+
+    /**
+     <h1> Navigate to alternative menu </h1>
+     @param menuName Categories, Cart, Account, Search, Recent View, Go to Top
+     @return her sayfada ortada sağda gözüken alternatif menü'de gitmek istediğiniz sayfanın menuName'ini parametreye girmeniz yeterlidir.
+     @author Ferid
+     @see <a href = "https://ourvirtualmarket.com/">Our Virtual Market</a>
+     */
+    public void navigateToAlternativeMenu(String menuName){
+        WebElement menuNameElement = Driver.get().
+                findElement(By.xpath("//div[@id='so-groups']/a//span[text()='"+menuName+"']"));
+        BrowserUtils.clickWithJS(menuNameElement);
+        BrowserUtils.clickWithJS(accountBtnFromPopupMyAccount);
+    }
+
+
+
+
 }
 

@@ -5,6 +5,7 @@ import com.ourvirtualmarket.pages.LoginPage;
 import com.ourvirtualmarket.utilities.BrowserUtils;
 import com.ourvirtualmarket.utilities.ConfigurationReader;
 import com.ourvirtualmarket.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -40,6 +41,7 @@ public class Login_StepDefs {
     public void the_user_clicks_on_your_story_to_go_to_the_homepage() {
         dashboardPage.yourStoreBtn.click();
     }
+
 
 
 }
