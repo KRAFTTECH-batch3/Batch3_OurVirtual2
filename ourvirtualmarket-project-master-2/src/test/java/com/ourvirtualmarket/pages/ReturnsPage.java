@@ -13,6 +13,8 @@ import java.util.Set;
 
 public class ReturnsPage extends BasePage{
 
+    OrderInformationPage orderInformationPage = new OrderInformationPage();
+
     DashboardPage dashboardPage = new DashboardPage();
 
     @FindBy(xpath = "//input[@id='input-firstname']")
@@ -56,19 +58,26 @@ public class ReturnsPage extends BasePage{
     }
 
     public void fillTheReturnForm(){
-        Map<String,String> orderInformations = new HashMap<>();
+        Map<String,String> orderInformations;
         dashboardPage.homeButton.click();
         dashboardPage.navigateToAlternativeMenu("Account");
         WebElement viewOrderBtn = Driver.get().findElement(By.xpath("//a[text()='View your order history']"));
         BrowserUtils.clickWithJS(viewOrderBtn);
         WebElement viewBtn = Driver.get().findElement(By.xpath("//a[@href='https://ourvirtualmarket.com/index.php?route=account/order/info&order_id=118']"));
         BrowserUtils.clickWithJS(viewBtn);
+        orderInformations = orderInformationPage.getAllInformation();
 
-//        orderInformations.put("Order ID",orderID.getText());
+        orderID.sendKeys(orderInformations.get("Order ID"));
+        orderDate.sendKeys(orderInformations.get("Order Date"));
+        productName.sendKeys(orderInformations.get("Product Name"));
+        productCode.sendKeys(orderInformations.get("Product Code"));
+        reasonForReturnBtn.click();
+    }
 
-
-
-
+    public void assertSuccessfulReturnMessage(){
+        String currentUrl = Driver.get().getCurrentUrl();
+        String expectedURL = "https://ourvirtualmarket.com/index.php?route=account/return/success";
+        Assert.assertEquals(expectedURL,currentUrl);
 
     }
 
