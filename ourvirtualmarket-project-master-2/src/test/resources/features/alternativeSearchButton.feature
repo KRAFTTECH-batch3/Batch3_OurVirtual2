@@ -17,6 +17,13 @@ Feature: Alternative search button feature
   Scenario:The user makes a search through alternative search button, s/he is directed to page that is having related
     When the user hover the alternative search button
     And the user click the alternative search button
-    And the user enters a product name "television" in the search bar
+    And the user enters a product name television in the search bar
     And the user click the popup search button
-    Then the user is directed to page that having "television" products
+    Then the user is directed to page that having television products
+
+  @TEST_B3VIR2-208
+  Scenario:Using 'X' button
+    When the user hover the alternative search button
+    And the user click the alternative search button
+    When the user click the X button
+    Then the user verify that s-he is on the home page
