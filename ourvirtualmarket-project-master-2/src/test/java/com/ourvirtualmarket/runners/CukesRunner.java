@@ -16,6 +16,7 @@ import org.junit.runner.RunWith;
         dryRun = false,
         tags = "@logout"
 )
+
 public class CukesRunner {
 
 

@@ -38,5 +38,9 @@ public class GoToTop_StepDefs {
     public void verifyThatTheUserTopOnPage() {
         Assert.assertTrue(dashboardPage.loginButton.isDisplayed());
     }
+    @Given("The user top on the page")
+    public void theUserTopOnThePage() {
+        goToTopButtonPage.hoverGoToTop.click();
+    }
 
 }

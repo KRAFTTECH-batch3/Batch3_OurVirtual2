@@ -10,22 +10,25 @@ import java.util.Map;
 
 public class OrderInformationPage extends BasePage {
 
-    @FindBy(xpath = "//b[contains(text(),'Order ID')]")
+    @FindBy(xpath = "(//div[@id='content']//td)[2]")
     public WebElement orderID;
 
     @FindBy(xpath = "//b[contains(text(),'Date Added')]")
     public WebElement orderDate;
 
-    @FindBy(xpath = "//td[contains(text(),'Product Name')]")
+    @FindBy(xpath = "(/html/body/div/div[4]/div/div/div[1]/table/tbody/tr//td)[1]")
     public WebElement productName;
 
-    @FindBy(xpath = "//td[contains(text(),'Model')]")
+    @FindBy(xpath = "(/html/body/div/div[4]/div/div/div[1]/table/tbody/tr//td)[2]")
     public WebElement productModel;
 
+    @FindBy(xpath = "//a[text()='Continue']")
+    public WebElement contBtn;
+
     public Map<String,String> getAllInformation(){
+
         Map<String,String> allInformation = new HashMap<>();
-        allInformation.put("Order ID", orderID.getAttribute("value"));
-        allInformation.put("Order Date", orderDate.getText());
+
         allInformation.put("Product Name", productName.getText());
         allInformation.put("Product Code", productModel.getText());
 
@@ -34,6 +37,7 @@ public class OrderInformationPage extends BasePage {
         }
 
         return allInformation;
+
     }
 
 
