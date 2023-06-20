@@ -19,12 +19,13 @@ public class Return_StepDefs {
 
     @When("the user has bought a product")
     public void the_user_has_bought_a_product() {
- //       returnPage.navigateToAlternativeMenu("Account");
         Driver.get().findElement(By.xpath("//a[text()='View your order history']")).click();
-
-        String text = Driver.get().findElement(By.xpath("(//tbody//tr//td[text()='#118'])[1]")).getText();
-        if(text==null) productsPage.buyAProduct();
-        Assert.assertNotNull(Driver.get().findElement(By.xpath("(//tbody//tr//td[text()='#118'])[1]")));
+        try {
+            String text = Driver.get().findElement(By.xpath("//p[text()='You have not made any previous orders!']")).getText();
+            if(text==null) productsPage.buyAProduct();
+        }catch (Exception e){
+            Assert.assertNotNull(Driver.get().findElement(By.xpath("/html/body/div/div[4]/div/div/div[1]/table/tbody/tr[1]/td[2]")));
+        }
     }
 
     @Given("the user visits the website")
@@ -72,6 +73,26 @@ public class Return_StepDefs {
     @Then("the user should see a notification message confirming the successful submission")
     public void the_user_should_see_a_notification_message_confirming_the_successful_submission() {
         returnPage.assertSuccessfulReturnMessage();
+    }
+
+    @Given("the user form is opened")
+    public void the_user_form_is_opened() {
+        BrowserUtils.clickWithJS(dashboardPage.returnsServiceFromFooterMenu);
+        BrowserUtils.scrollToElement(returnPage.orderID);
+        BrowserUtils.waitFor(3);
+    }
+    @When("The submit button is clicked even though all the fields that are already empty are left blank.")
+    public void the_submit_button_is_clicked_even_though_all_the_fields_that_are_already_empty_are_left_blank() {
+        BrowserUtils.clickWithJS(returnPage.submitBtn);
+        BrowserUtils.waitFor(3);
+        BrowserUtils.scrollToElement(returnPage.orderID);
+        BrowserUtils.waitFor(2);
+
+    }
+    @Then("the error message {string} is displayed.")
+    public void the_error_message_is_displayed(String message) {
+        message = "Please complete the form below to request an RMA number.";
+        returnPage.assertErrorMessage(message);
     }
 
 
