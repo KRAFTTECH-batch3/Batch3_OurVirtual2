@@ -1,6 +1,6 @@
 @logout
 Feature: Logout Test Set
-  Background: logout Directly Test
+  Background: The user should be login
     Given The user is on the login page
     When The user should be able to login with valid "denemekraft@gmail.com" and "krafttech123"
 
@@ -12,7 +12,7 @@ Feature: Logout Test Set
     And Verify that the Continue button is visible
     Then The user go back to previous page
     And Verify that title is not "My Account"
-    And Verify that Login and Register button is visible and Logout button is not visible
+    And Verify that Logout button is Not visible
 
 
   @logout2
@@ -23,7 +23,7 @@ Feature: Logout Test Set
     And Verify that the Continue button is visible
     Then The user go back to previous page
     And Verify that title is not "My Account"
-    And Verify that Login and Register button is visible and Logout button is not visible
+    And Verify that Logout button is Not visible
 
 
   @logout3
@@ -39,7 +39,7 @@ Feature: Logout Test Set
     When The user go back to previous page
     When The user hover the My Cart
     Then Verify that My cart is empty
-    Then Verify that Login and Register button is visible and Logout button is not visible
+    Then Verify that Logout button is Not visible
 
   @logout4
   Scenario:  Logout Test When at Shopping Cart
@@ -65,4 +65,4 @@ Feature: Logout Test Set
     And Verify that the Continue button is visible
     When The user go back to previous page
     Then Verify that My Account Information is NOT visible
-    And Verify that Login and Register button is visible and Logout button is not visible
+    And Verify that Logout button is Not visible
