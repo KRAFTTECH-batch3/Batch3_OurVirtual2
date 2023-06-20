@@ -12,8 +12,8 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class ProductsPage extends BasePage{
-    CheckoutPage checkoutPage = new CheckoutPage();
-    DashboardPage dashboardPage = new DashboardPage();
+    CheckoutPage checkoutPage;
+    DashboardPage dashboardPage;
     String expectedProductName;
 
     @FindBy(xpath = "(//input[@value='Buy Now'])[1]")
@@ -39,10 +39,6 @@ public class ProductsPage extends BasePage{
 
     @FindBy(xpath = "//li[@class='content-item']//td[@class='text-left']")
     public List<WebElement> listOfAddedProduct;
-
-
-    @FindBy(id = "button-cart")
-    public WebElement addToCartButton_OnProductPage;
 
     @FindBy(css = "button[class='close']")
     public WebElement closeTheSuccessPopUpButton;
@@ -142,6 +138,5 @@ public class ProductsPage extends BasePage{
         BrowserUtils.waitFor(1);
         Driver.get().findElement(By.xpath("//a[contains(text(),'"+productName+"')]" +
                 "/../../..//button[.='Add to Cart']")).click();
-
     }
 }

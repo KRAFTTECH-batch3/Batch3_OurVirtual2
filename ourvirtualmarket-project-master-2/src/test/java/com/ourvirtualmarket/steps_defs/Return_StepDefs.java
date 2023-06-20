@@ -14,7 +14,6 @@ public class Return_StepDefs {
     ProductsPage productsPage = new ProductsPage();
     AlternativeAddToCartPage alternativeAddToCartPage = new AlternativeAddToCartPage();
     ReturnsPage returnPage = new ReturnsPage();
-    CheckoutPage checkoutPage = new CheckoutPage();
     DashboardPage dashboardPage = new DashboardPage();
 
     @When("the user has bought a product")
@@ -87,17 +86,13 @@ public class Return_StepDefs {
         BrowserUtils.waitFor(3);
         BrowserUtils.scrollToElement(returnPage.orderID);
         BrowserUtils.waitFor(2);
-
     }
     @Then("the error message {string} is displayed.")
     public void the_error_message_is_displayed(String message) {
         message = "Please complete the form below to request an RMA number.";
         returnPage.assertErrorMessage(message);
+        returnPage.assertRequiredMessage();
     }
-
-
-
-
 
 }
 

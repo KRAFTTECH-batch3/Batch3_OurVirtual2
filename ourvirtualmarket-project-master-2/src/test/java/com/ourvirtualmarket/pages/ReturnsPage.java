@@ -14,16 +14,13 @@ import java.util.Set;
 public class ReturnsPage extends BasePage{
     OrderInformationPage orderInformationPage = new OrderInformationPage();
     DashboardPage dashboardPage = new DashboardPage();
-    OrderHistoryPage orderHistoryPage = new OrderHistoryPage();
+    OrderHistoryPage orderHistoryPage= new OrderHistoryPage();
     @FindBy(xpath = "//input[@id='input-firstname']")
     public WebElement firstname;
     @FindBy(xpath = "//input[@id='input-lastname']")
     public WebElement lastname;
     @FindBy(xpath = "//input[@id='input-email']")
     public WebElement email;
-
-    @FindBy(xpath = "//input[@id='input-telephone']")
-    public WebElement telephoneNum;
     @FindBy(xpath = "//input[@id='input-order-id']")
     public WebElement orderID;
     @FindBy(xpath = "//input[@id='input-date-ordered']")
