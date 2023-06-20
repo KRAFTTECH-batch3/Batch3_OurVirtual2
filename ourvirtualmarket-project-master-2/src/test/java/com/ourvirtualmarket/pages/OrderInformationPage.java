@@ -22,6 +22,9 @@ public class OrderInformationPage extends BasePage {
     @FindBy(xpath = "(/html/body/div/div[4]/div/div/div[1]/table/tbody/tr//td)[2]")
     public WebElement productModel;
 
+    @FindBy(xpath = "//a[text()='Continue']")
+    public WebElement contBtn;
+
     public Map<String,String> getAllInformation(){
 
         Map<String,String> allInformation = new HashMap<>();
