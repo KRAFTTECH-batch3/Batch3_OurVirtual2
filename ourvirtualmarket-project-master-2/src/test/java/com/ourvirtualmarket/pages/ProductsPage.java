@@ -14,9 +14,6 @@ import java.util.List;
 public class ProductsPage extends BasePage{
     CheckoutPage checkoutPage = new CheckoutPage();
     DashboardPage dashboardPage = new DashboardPage();
-
-    SoftAssertions softAssertions = new SoftAssertions();
-
     String expectedProductName;
 
     @FindBy(xpath = "(//input[@value='Buy Now'])[1]")
@@ -27,15 +24,6 @@ public class ProductsPage extends BasePage{
 
     @FindBy(xpath = "//div[@class='title-product']/h1")
     public WebElement productName;
-
-    @FindBy(id = "price-old")
-    public WebElement price;
-
-    @FindBy(xpath = "//div[@class='stock']/i")
-    public WebElement availabilityStatus;
-
-    @FindBy(xpath = "//div[@class='inner-box-viewed ']")
-    public WebElement viewed;
 
     @FindBy(css = "input[value='Add to Cart']")
     public WebElement addToCartButton;
@@ -53,6 +41,12 @@ public class ProductsPage extends BasePage{
     public List<WebElement> listOfAddedProduct;
 
 
+    @FindBy(id = "button-cart")
+    public WebElement addToCartButton_OnProductPage;
+
+    @FindBy(css = "button[class='close']")
+    public WebElement closeTheSuccessPopUpButton;
+
     /**
      <h1> Navigate To Product </h1>
      @param productName
@@ -63,6 +57,11 @@ public class ProductsPage extends BasePage{
     public void navigateToProduct(String productName){
         WebElement product = Driver.get().findElement(By.partialLinkText(productName));
         BrowserUtils.clickWithJS(product);
+    }
+    public void hoverTheProduct(String productName){
+        WebElement product = Driver.get().findElement(By.partialLinkText(productName));
+        BrowserUtils.scrollToElement(product);
+        BrowserUtils.hover(product);
     }
 
     /**
@@ -110,12 +109,9 @@ public class ProductsPage extends BasePage{
     public void assertViewedNumber(String viewes){
         String viewed = BrowserUtils.getText(By.xpath("//div[@class='inner-box-viewed ']"));
         String[] array = viewed.split(" ");
-        int i = Integer.parseInt(array[1]);
-        System.out.println(i);
-        int expectedViewes = i+1;
-        System.out.println(expectedViewes);
-        System.out.println(expectedViewes + " times");
-        softAssertions.assertThat(viewes).isEqualTo(expectedViewes+" times");
+        int expectedViewed = Integer.parseInt(array[1]);
+        System.out.println(expectedViewed);
+        Assert.assertEquals(expectedViewed+" times",viewes);
     }
 
     public void assertButtons(){
@@ -141,4 +137,11 @@ public class ProductsPage extends BasePage{
         }
     }
 
+    public void clickTheAddToCartButtonOnTheProduct(String productName){
+        hoverTheProduct(productName);
+        BrowserUtils.waitFor(1);
+        Driver.get().findElement(By.xpath("//a[contains(text(),'"+productName+"')]" +
+                "/../../..//button[.='Add to Cart']")).click();
+
+    }
 }
