@@ -20,9 +20,9 @@ public class Login_StepDefs {
     @Given("The user is on the login page")
     public void the_user_is_on_the_login_page() {
         dashboardPage = new DashboardPage();
-        String url = ConfigurationReader.get("url");
-        Driver.get().get(url);
-        dashboardPage.closePopUp();
+//        String url = ConfigurationReader.get("url");
+//        Driver.get().get(url);
+//        dashboardPage.closePopUp();
         dashboardPage.loginButton.click();
     }
 

@@ -1,8 +1,8 @@
-@B3VIR2-213
+@negative @return4 @B3VIR2-213
 Feature: US 20: Return - TC_4 - Verify that an error message is displayed if one or more pieces of information are missing.
 
 
-		#@PRECOND_B3VIR2-170
+  #@PRECOND_B3VIR2-170
   Background:
     Given The user on the home page
     When The user close the pop-up
@@ -14,6 +14,5 @@ Feature: US 20: Return - TC_4 - Verify that an error message is displayed if one
   @TEST_B3VIR2-182
   Scenario: Error message is displayed when one or more pieces of information are missing
     Given the user form is opened
-    And all fields that are already empty are left blank.
-    When the submit button is clicked
+    When The submit button is clicked even though all the fields that are already empty are left blank.
     Then the error message "Please complete the form below to request an RMA number" is displayed.
