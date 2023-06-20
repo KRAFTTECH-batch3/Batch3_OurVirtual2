@@ -53,6 +53,15 @@ public abstract class BasePage {
     @FindBy(xpath = "(//a[text()='Register'])[2]")
     public WebElement registerButton;
 
+    /** viewCardButton, myCartButton'a hover yapıldığında (MY CART'ta ürün varsa) görülür.
+     * */
+    @FindBy(partialLinkText = "View Cart")
+    public WebElement viewCartButton;
+
+    /** checkoutButton, myCartButton'a hover yapıldığında (MY CART'ta ürün varsa) görülür.
+     * */
+    @FindBy(partialLinkText = "Checkout")
+    public WebElement checkoutButton;
     @FindBy(xpath = "//div[@class='box-service box-footer']//a[contains(text(),'Returns')]")
     public WebElement returnsServiceFromFooterMenu;
 
@@ -66,19 +75,19 @@ public abstract class BasePage {
 
 
     /**
-        <h1> Navigate To Module </h1>
+     <h1> Navigate To Module </h1>
      @param tab  Home, Special Offers, Television, Networking, Health & Beauty
-     @return gitmek istediğiniz kategori ismini parametreye girerek gitmenizi sağlar
+     Gitmek istediğiniz kategori ismini parametreye girerek gitmenizi sağlar
      @author Emre
      @see <a href = "https://ourvirtualmarket.com/">Our Virtual Market</a>
-     *  */
+      *  */
     public void navigateToModule(String tab){
         Driver.get().findElement(By.xpath("//li/a/strong[contains(.,'"+tab+"')]")).click();
     }
 
     /**
      <h1> Logout </h1>
-     @return hesaptan çıkış yapmak için kullanılır
+     hesaptan çıkış yapmak için kullanılır
      @author Emre
      @see <a href = "https://ourvirtualmarket.com/">Our Virtual Market</a>
       *  */
@@ -86,7 +95,6 @@ public abstract class BasePage {
         BrowserUtils.waitForClickablility(logoutButton,5);
         logoutButton.click();
     }
-
     /**
      <h1> Navigate To Service </h1>
      @param service  Contact Us, Returns, Support, Site Map, Customer Service, Custom Link
@@ -131,9 +139,6 @@ public abstract class BasePage {
         BrowserUtils.clickWithJS(menuNameElement);
         BrowserUtils.clickWithJS(accountBtnFromPopupMyAccount);
     }
-
-
-
 
 }
 
