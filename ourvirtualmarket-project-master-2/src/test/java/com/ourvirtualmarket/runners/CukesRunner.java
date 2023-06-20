@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/ourvirtualmarket/steps_defs",
         dryRun = false,
-        tags = "@logout"
+        tags = "@TEST_B3VIR2-187"
 )
 
 public class CukesRunner {
