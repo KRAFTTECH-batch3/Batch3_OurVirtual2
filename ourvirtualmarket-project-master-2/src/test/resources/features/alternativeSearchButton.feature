@@ -1,4 +1,4 @@
-@cg
+
 
 Feature: Alternative search button feature
 
@@ -12,7 +12,7 @@ Feature: Alternative search button feature
     When the user hover the alternative search button
     And the user click the alternative search button
     Then  the user verify that s/he see the search pop-up
-@wip
+
   @TEST_B3VIR2-215
   Scenario:The user makes a search through alternative search button, s/he is directed to page that is having related
     When the user hover the alternative search button

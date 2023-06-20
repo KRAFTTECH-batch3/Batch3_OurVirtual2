@@ -9,4 +9,12 @@ public class HomePage extends BasePage{
 
     @FindBy(id = "button-search" )
     public WebElement popSearchButton;
+
+    @FindBy(xpath = "//input[@id='input-search']" )
+    public WebElement popUpSearchButtonField;
+
+    @FindBy(xpath = "//input[@placeholder='Keywords']")
+    public WebElement relatedProductPage;
+
+
 }
