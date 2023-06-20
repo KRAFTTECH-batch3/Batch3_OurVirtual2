@@ -14,11 +14,12 @@ import org.junit.Assert;
 
 public class Login_StepDefs {
 
-    LoginPage loginPage = new LoginPage();
-    DashboardPage dashboardPage = new DashboardPage();
+    LoginPage loginPage;// = new LoginPage();
+    DashboardPage dashboardPage;// = new DashboardPage();
 
     @Given("The user is on the login page")
     public void the_user_is_on_the_login_page() {
+        dashboardPage = new DashboardPage();
         String url = ConfigurationReader.get("url");
         Driver.get().get(url);
         dashboardPage.closePopUp();
@@ -27,8 +28,9 @@ public class Login_StepDefs {
 
     @When("The user should be able to login with valid {string} and {string}")
     public void the_user_should_be_able_to_login_with_valid_and(String email, String password) {
+        loginPage = new LoginPage();
         loginPage.login(email, password);
-        BrowserUtils.clickWithJS(loginPage.loginBtn);
+      //  BrowserUtils.clickWithJS(loginPage.loginBtn);
     }
 
     @Then("The user should be able to see logout button")

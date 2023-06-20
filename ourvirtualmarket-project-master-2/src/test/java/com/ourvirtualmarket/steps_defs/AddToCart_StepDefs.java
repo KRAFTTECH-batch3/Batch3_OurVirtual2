@@ -70,6 +70,35 @@ public class AddToCart_StepDefs {
 
 
 
+
+    @And("The user close the Added to cart successfully popup")
+    public void theUserCloseTheAddedToCartSuccessfullyPopup() {
+        productsPage = new ProductsPage();
+        BrowserUtils.waitForClickablility(productsPage.closeTheSuccessPopUpButton,5);
+        productsPage.closeTheSuccessPopUpButton.click();
+    }
+
+    @When("The user hover the My Cart")
+    public void theUserHoverTheMyCart() {
+        dashboardPage = new DashboardPage();
+        BrowserUtils.hover(dashboardPage.myCartButton);
+        BrowserUtils.waitFor(1);
+    }
+
+    @And("The user hover the {string} and click the Add to Cart button on the product")
+    public void theUserHoverAndClickTheAddToCartButtonOnTheProduct(String productName) {
+        productsPage = new ProductsPage();
+        productsPage.clickTheAddToCartButtonOnTheProduct(productName);
+    }
+
+
+    @When("The user click the View Cart")
+    public void theUserClickTheViewCart() {
+        dashboardPage= new DashboardPage();
+        BrowserUtils.clickWithJS(dashboardPage.viewCartButton);
+    }
+
+
 }
 
 
