@@ -75,6 +75,8 @@ public class ReturnsPage extends BasePage{
 
         Map<String,String> orderInformations2 = new HashMap<>();
 
+
+
         // product name ve product code locate edilecek. bilgileri orderInformarion2'nin içine atılacak
         // ve 2 map birleştirilecek. sonrasında form doldurulacak.
 
