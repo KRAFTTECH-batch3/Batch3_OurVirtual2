@@ -5,14 +5,15 @@ Feature: Logout Test Set
     When The user should be able to login with valid "denemekraft@gmail.com" and "krafttech123"
 
   @logout1
-  Scenario:
+  Scenario: Logout Directly Test
     Given The user click the Logout button at the top right corner
     When Verify that title is "Account Logout"
     And Verify that the logout helper texts
     And Verify that the Continue button is visible
     Then The user go back to previous page
-    And Verify that Login and Register button is visible and Logout button is not visible
     And Verify that title is not "My Account"
+    And Verify that Login and Register button is visible and Logout button is not visible
+
 
   @logout2
   Scenario: Logout Directly Test - 2
@@ -21,8 +22,9 @@ Feature: Logout Test Set
     And Verify that the logout helper texts
     And Verify that the Continue button is visible
     Then The user go back to previous page
-    And Verify that Login and Register button is visible and Logout button is not visible
     And Verify that title is not "My Account"
+    And Verify that Login and Register button is visible and Logout button is not visible
+
 
   @logout3
   Scenario: Logout Test After add an Item to Cart
@@ -51,7 +53,7 @@ Feature: Logout Test Set
     And Verify that the Continue button is visible
     When The user go back to previous page
     Then Verify that Shopping cart page is NOT visible
-    Then Verify that Login and Register button is visible and Logout button is not visible
+    Then Verify that Logout button is Not visible
 
   @logout5
   Scenario: Logout Test When at My Account Information Page

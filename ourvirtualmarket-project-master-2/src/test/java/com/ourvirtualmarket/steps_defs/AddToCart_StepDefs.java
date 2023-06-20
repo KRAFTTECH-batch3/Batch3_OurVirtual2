@@ -7,6 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.assertj.core.api.SoftAssertions;
 
 public class AddToCart_StepDefs {
 
@@ -69,7 +70,7 @@ public class AddToCart_StepDefs {
 
 
 
-    }
+
     @And("The user close the Added to cart successfully popup")
     public void theUserCloseTheAddedToCartSuccessfullyPopup() {
         productsPage = new ProductsPage();
