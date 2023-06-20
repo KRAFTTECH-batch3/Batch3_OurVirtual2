@@ -1,3 +1,4 @@
+@B3VIR2-222
 Feature: Add to Cart
 
   Background:
@@ -6,7 +7,7 @@ Feature: Add to Cart
     Then The user should be able to see logout button
     When The user clicks on your story to go to the homepage
 
-  @addToCart
+  @TEST_B3VIR2-187
   Scenario Outline: Add a product to cart
     Given The user is on the homepage
     When The user go to the 'Networking' module
@@ -20,7 +21,7 @@ Feature: Add to Cart
     Then The user should be able to see added product in the shopping cart
     Examples:
       | product name             | price   | availability status | viewes|
-      | ASUS ROG STRIX GS-AX3000 | $156.00 | In Stock            | 488 times|
+      | ASUS ROG STRIX GS-AX3000 | $156.00 | In Stock            | 504 times|
 
 
 
