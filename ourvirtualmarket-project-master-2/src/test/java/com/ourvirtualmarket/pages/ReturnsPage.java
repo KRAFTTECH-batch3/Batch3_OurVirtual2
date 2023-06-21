@@ -75,14 +75,10 @@ public class ReturnsPage extends BasePage{
 
         Map<String,String> orderInformations2 = new HashMap<>();
 
-        orderInformations2.put("Product Name",orderInformationPage.productName.getText());
-        orderInformations2.put("Product Code",orderInformationPage.productModel.getText());
+        // product name ve product code locate edilecek. bilgileri orderInformarion2'nin içine atılacak
+        // ve 2 map birleştirilecek. sonrasında form doldurulacak.
 
-        orderInformations.putAll(orderInformations2);
-
-        BrowserUtils.clickWithJS(returnsServiceFromFooterMenu);
-
-
+//        orderInformations = orderInformationPage.getAllInformation();
 
         orderID.sendKeys(orderInformations.get("Order ID"));
         orderDate.sendKeys(orderInformations.get("Order Date"));

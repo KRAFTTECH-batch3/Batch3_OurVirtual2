@@ -1,6 +1,5 @@
 @B3VIR2-214
 Feature: Go to top page with button
-
   Background: Go to home page
     Given The user on the home page
     And The user close the pop-up
