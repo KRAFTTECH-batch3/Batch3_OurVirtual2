@@ -55,6 +55,7 @@ public class WishListPage extends BasePage {
     @FindBy (xpath = "(//tbody)[2]//tr")
     public List<WebElement>addToList;
 
+
     public void cleanItems() throws InterruptedException {
         while (myWishList.contains(removeButton)) {
             removeButton.click();
