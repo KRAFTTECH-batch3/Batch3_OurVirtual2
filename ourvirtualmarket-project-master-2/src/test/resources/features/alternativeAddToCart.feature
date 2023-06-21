@@ -2,8 +2,8 @@
 Feature: Ourvirtualmarket Alternative Add to cart Functions Tests
 
   Background:
-    Given The user is on the login page
-    And The user should be able to login with valid "alvl@gmail.com" and "123Alvl"
+    Given the user is on the home page
+    And the user logged in with email "alvl@gmail.com" and password "123Alvl"
   @ovm @B3VIR2-164
   Scenario: Scroll Functionality
     Given the user scrolls down on the page and he or she should reach trending items
