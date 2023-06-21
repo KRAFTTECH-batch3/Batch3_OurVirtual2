@@ -12,8 +12,9 @@ import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 
 public class GoToTop_StepDefs {
-    DashboardPage dashboardPage=new DashboardPage();
-    GoToTopPage goToTopButtonPage=new GoToTopPage();
+    DashboardPage dashboardPage = new DashboardPage();
+    GoToTopPage goToTopButtonPage = new GoToTopPage();
+
     @Given("The user on the home page")
     public void theUserOnTheHomePage() {
 
@@ -30,14 +31,17 @@ public class GoToTop_StepDefs {
         JavascriptExecutor js = (JavascriptExecutor) Driver.get();
         js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
     }
+
     @When("The user hover the button,text appears Go To Top and click button")
     public void theUserHoverTheButtonTextAppearsGoToTopAndClickButton() {
         goToTopButtonPage.hoverGoToTop.click();
     }
+
     @Then("Verify that the user top on page")
     public void verifyThatTheUserTopOnPage() {
         Assert.assertTrue(dashboardPage.loginButton.isDisplayed());
     }
+
     @Given("The user top on the page")
     public void theUserTopOnThePage() {
         goToTopButtonPage.hoverGoToTop.click();
