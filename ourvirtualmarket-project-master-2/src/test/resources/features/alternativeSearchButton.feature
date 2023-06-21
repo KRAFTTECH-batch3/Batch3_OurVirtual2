@@ -1,8 +1,8 @@
 
+  @B3VIR2-216
 
 Feature: Alternative search button feature
 
-  #@PRECOND_B3VIR2-202
   Background: Go to home page
     Given The user on the home page
     And The user close the pop-up
