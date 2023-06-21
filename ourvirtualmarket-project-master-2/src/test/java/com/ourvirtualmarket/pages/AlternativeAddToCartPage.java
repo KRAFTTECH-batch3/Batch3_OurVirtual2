@@ -56,12 +56,12 @@ public class AlternativeAddToCartPage extends BasePage {
     public WebElement addedItem;
 
 
-    public void login(String eml, String pswrd){
-        email.sendKeys(eml);
-        password.sendKeys(pswrd);
-        LoginButton.click();
-        homePage.click();
-        closePopUp.click();}
+//    public void login(String eml, String pswrd){
+//        email.sendKeys(eml);
+//        password.sendKeys(pswrd);
+//        LoginButton.click();
+//        homePage.click();
+//        closePopUp.click();}
 
         public void goToHomePage(){
         homePage.click();

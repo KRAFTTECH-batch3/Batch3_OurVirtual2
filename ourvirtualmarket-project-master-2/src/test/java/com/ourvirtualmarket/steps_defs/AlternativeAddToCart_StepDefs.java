@@ -1,8 +1,6 @@
 package com.ourvirtualmarket.steps_defs;
 
 import com.ourvirtualmarket.pages.AlternativeAddToCartPage;
-import com.ourvirtualmarket.utilities.BrowserUtils;
-import com.ourvirtualmarket.utilities.ConfigurationReader;
 import com.ourvirtualmarket.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,18 +13,18 @@ import java.util.List;
 public class AlternativeAddToCart_StepDefs {
     AlternativeAddToCartPage alternativeAddToCartPage = new AlternativeAddToCartPage();
 
-    @Given("the user is on the home page")
-    public void the_user_is_on_the_home_page() {
-        Driver.get().get(ConfigurationReader.get("url"));
-        alternativeAddToCartPage.popUp.click();
-        BrowserUtils.clickWithJS(alternativeAddToCartPage.login);
+//    @Given("the user on the home page")
+//    public void the_user_on_the_home_page() {
+//        Driver.get().get(ConfigurationReader.get("url"));
+//        alternativeAddToCartPage.popUp.click();
+//        BrowserUtils.clickWithJS(alternativeAddToCartPage.login);
+//
+//    }
 
-    }
-
-    @Given("the user logged in with email {string} and password {string}")
-    public void the_user_logged_in_with_email_and_password(String email, String password) {
-        alternativeAddToCartPage.login(email, password);
-    }
+//    @Given("the user logged in with email {string} and password {string}")
+//    public void the_user_logged_in_with_email_and_password(String email, String password) {
+//        alternativeAddToCartPage.login(email, password);
+//    }
 
     @Given("the user scrolls down on the page and he or she should reach trending items")
     public void the_user_scrolls_down_on_the_page_and_he_or_she_should_reach_trending_items() {
