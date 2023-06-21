@@ -12,8 +12,8 @@ C:\Users\Huawei\IdeaProjects\Batch3_OurVirtual2\ourvirtualmarket-project-master-
 C:\Users\Huawei\IdeaProjects\Batch3_OurVirtual2\ourvirtualmarket-project-master-2\src\test\java\com\ourvirtualmarket\steps_defs\AddToCart_StepDefs.java
 C:\Users\Huawei\IdeaProjects\Batch3_OurVirtual2\ourvirtualmarket-project-master-2\src\test\java\com\ourvirtualmarket\utilities\Driver.java
 C:\Users\Huawei\IdeaProjects\Batch3_OurVirtual2\ourvirtualmarket-project-master-2\src\test\java\com\ourvirtualmarket\pages\AlternativeAddToCartPage.java
-C:\Users\Huawei\IdeaProjects\Batch3_OurVirtual2\ourvirtualmarket-project-master-2\src\test\java\com\ourvirtualmarket\pages\HomePage.java
 C:\Users\Huawei\IdeaProjects\Batch3_OurVirtual2\ourvirtualmarket-project-master-2\src\test\java\com\ourvirtualmarket\pages\GoToTopPage.java
+C:\Users\Huawei\IdeaProjects\Batch3_OurVirtual2\ourvirtualmarket-project-master-2\src\test\java\com\ourvirtualmarket\pages\AlternativeSearchButtonPage.java
 C:\Users\Huawei\IdeaProjects\Batch3_OurVirtual2\ourvirtualmarket-project-master-2\src\test\java\com\ourvirtualmarket\steps_defs\AlternativeAddToCart_StepDefs.java
 C:\Users\Huawei\IdeaProjects\Batch3_OurVirtual2\ourvirtualmarket-project-master-2\src\test\java\com\ourvirtualmarket\utilities\BrowserUtils.java
 C:\Users\Huawei\IdeaProjects\Batch3_OurVirtual2\ourvirtualmarket-project-master-2\src\test\java\com\ourvirtualmarket\pages\AccountLogoutPage.java
