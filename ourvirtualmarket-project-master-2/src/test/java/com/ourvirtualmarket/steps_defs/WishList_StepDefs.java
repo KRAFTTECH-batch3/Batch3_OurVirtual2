@@ -80,7 +80,6 @@ public class WishList_StepDefs {
     @Given("The User remove items from wish list")
     public void the_user_remove_items_from_wish_list() throws InterruptedException {
         BrowserUtils.clickWithJS(wishListPage.wishListEmpty);
-        //wishListPage.wishListEmpty.click();
         Thread.sleep(3000);
 
         while (wishListPage.myWishList.contains(wishListPage.removeButton)) {

@@ -5,11 +5,11 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class WishListPage extends BasePage {
-    @FindBy(xpath = "//*[@id='wishlist-total']")
+public class WishListPage extends BasePage{
+    @FindBy(id="wishlist-total")
     public WebElement wishListEmpty;
 
-    @FindBy(xpath = "//a[contains(.,'Wish List')]")
+    @FindBy(xpath = "//*[@id='wishlist-total'] [contains(@title,'Wish List ')]")
     public WebElement wishList;
     @FindBy(xpath = "//*[@class='btn btn-danger']")
     public WebElement removeButton;
@@ -19,6 +19,7 @@ public class WishListPage extends BasePage {
     public WebElement market;
     @FindBy(xpath = "//p[text()='Your wish list is empty.']")
     public WebElement emptyMessage;
+
 
     @FindBy(xpath = "//button[@class='btn btn-primary']")
     public WebElement addToCard;
@@ -57,15 +58,14 @@ public class WishListPage extends BasePage {
 
 
     public void cleanItems() throws InterruptedException {
-        while (myWishList.contains(removeButton)) {
+        while (myWishList.contains(removeButton)){
             removeButton.click();
             Thread.sleep(3000);
-
         }
     }
 
     public void addItems() throws InterruptedException {
-        if (!wishList.getText().contains("0")) {
+        if(!wishList.getText().contains("0")) {
             wishListEmpty.click();
             Thread.sleep(2000);
             cleanItems();
@@ -74,12 +74,5 @@ public class WishListPage extends BasePage {
         }
     }
 
-    public void addShoppingCart() throws InterruptedException {
-        while (myWishList.contains(addToCard)) {
-            addToCard.click();
-            viewCard.click();
-            Thread.sleep(3000);
 
-        }
-    }
 }

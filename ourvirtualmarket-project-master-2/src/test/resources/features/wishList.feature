@@ -14,3 +14,4 @@ Feature: add wish list
   Scenario:  Scenario: The User add Items to the addToCart
     Given The User should add items to the addToCart
     Then The user should verify the items in the addToCart
+

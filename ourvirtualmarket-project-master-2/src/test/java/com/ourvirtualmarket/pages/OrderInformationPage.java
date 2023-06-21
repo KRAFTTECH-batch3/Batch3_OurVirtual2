@@ -16,18 +16,18 @@ public class OrderInformationPage extends BasePage {
     @FindBy(xpath = "//b[contains(text(),'Date Added')]")
     public WebElement orderDate;
 
-    @FindBy(xpath = "(/html/body/div/div[4]/div/div/div[1]/table/tbody/tr//td)[1]")
+    @FindBy(xpath = "//td[contains(text(),'Product Name')]")
     public WebElement productName;
 
-    @FindBy(xpath = "(/html/body/div/div[4]/div/div/div[1]/table/tbody/tr//td)[2]")
+    @FindBy(xpath = "//td[contains(text(),'Model')]")
     public WebElement productModel;
-
-    @FindBy(xpath = "//a[text()='Continue']")
-    public WebElement contBtn;
 
     public Map<String,String> getAllInformation(){
 
         Map<String,String> allInformation = new HashMap<>();
+
+
+
 
         allInformation.put("Product Name", productName.getText());
         allInformation.put("Product Code", productModel.getText());
