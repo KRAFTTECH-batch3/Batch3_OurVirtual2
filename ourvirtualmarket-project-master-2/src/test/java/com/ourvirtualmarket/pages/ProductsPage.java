@@ -16,6 +16,8 @@ public class ProductsPage extends BasePage{
     DashboardPage dashboardPage;
     String expectedProductName;
 
+    //
+
     @FindBy(xpath = "(//input[@value='Buy Now'])[1]")
     public WebElement buyNowBtn;
 
