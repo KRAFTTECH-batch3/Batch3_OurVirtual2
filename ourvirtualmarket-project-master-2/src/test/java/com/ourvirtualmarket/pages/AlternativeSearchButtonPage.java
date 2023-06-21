@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
  public class AlternativeSearchButtonPage extends BasePage{
+
+    //yorum satırı deneme Rabbim sen büyüksün
     @FindBy(className = "sticky-mysearch")
     public WebElement searchButton;
 
