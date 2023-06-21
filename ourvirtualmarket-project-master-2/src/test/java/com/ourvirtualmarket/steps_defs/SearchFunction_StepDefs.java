@@ -9,13 +9,13 @@ public class SearchFunction_StepDefs {
 
     SearchFunctionPage searchFunctionPage=new SearchFunctionPage();
     @Given("The search box should appear on the main page")
-    public void theSearchBoxShouldAppearOnTheMainPage() {
+    public void the_search_box_should_appear_on_the_main_page() {
         Assert.assertTrue(searchFunctionPage.searchBoxAppear.isDisplayed());
 
     }
 
     @Then("the search text should appear in the search bar")
-    public void theSearchTextShouldAppearInTheSearchBar() {
+    public void the_search_text_should_appear_in_the_search_bar() {
         Assert.assertTrue(searchFunctionPage.searchText.isDisplayed());
     }
         @Given("Any order can be entered in the search bar")

@@ -1,3 +1,4 @@
+com\ourvirtualmarket\pages\AlternativeSearchButtonPage.class
 com\ourvirtualmarket\steps_defs\GoToTop_StepDefs.class
 com\ourvirtualmarket\steps_defs\SearchFunction_StepDefs.class
 com\ourvirtualmarket\utilities\ConfigurationReader.class
@@ -22,7 +23,6 @@ com\ourvirtualmarket\pages\MyAccountPage.class
 com\ourvirtualmarket\pages\OrderInformationPage.class
 com\ourvirtualmarket\steps_defs\AddToCart_StepDefs.class
 com\ourvirtualmarket\pages\OrderHistoryPage.class
-com\ourvirtualmarket\pages\HomePage.class
 com\ourvirtualmarket\steps_defs\Login_StepDefs.class
 com\ourvirtualmarket\utilities\BrowserUtils.class
 com\ourvirtualmarket\steps_defs\Logout_StepDefs.class
