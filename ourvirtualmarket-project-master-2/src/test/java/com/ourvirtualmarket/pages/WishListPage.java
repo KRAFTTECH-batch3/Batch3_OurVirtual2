@@ -20,6 +20,43 @@ public class WishListPage extends BasePage{
     @FindBy(xpath = "//p[text()='Your wish list is empty.']")
     public WebElement emptyMessage;
 
+
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement addToCard;
+
+    @FindBy(xpath = "//a[@class='btn btn-view-cart inverse']")
+    public WebElement viewCard;
+    @FindBy(xpath = "//a[text()='Shopping Cart']")
+    public WebElement shoppingCard;
+
+    @FindBy (xpath = "//*[@class='caption']")
+    public List<WebElement>items;
+
+    @FindBy (xpath = "//span[.='Add to Wish List']")
+    public List<WebElement>addToWish;
+    @FindBy (xpath = "//div[@class='caption'] //*[@title='Nicky Clarke NHD146 Hair Therapy Touch Control Hair Dryer']")
+    public WebElement firstItem;
+
+    @FindBy (xpath = "//button[@data-original-title=\"Add to Cart\"]")
+    public List<WebElement>addList;
+
+    @FindBy (xpath = "//button[@data-original-title=\"Add to Cart\"]")
+    public WebElement addItem;
+
+    @FindBy(xpath = "//span[@aria-hidden=\"true\"]")
+    public WebElement close;
+
+
+    @FindBy(xpath = "//span[@class='icon-c']")
+    public WebElement add;
+
+
+    @FindBy (xpath = "//div[@class='checkout clearfix']//a[@class='btn btn-view-cart inverse'][normalize-space()='View Cart']")
+    public WebElement wiewCard;
+    @FindBy (xpath = "(//tbody)[2]//tr")
+    public List<WebElement>addToList;
+
+
     public void cleanItems() throws InterruptedException {
         while (myWishList.contains(removeButton)){
             removeButton.click();
