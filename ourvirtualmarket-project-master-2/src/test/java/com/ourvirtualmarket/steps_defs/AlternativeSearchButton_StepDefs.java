@@ -1,6 +1,6 @@
 package com.ourvirtualmarket.steps_defs;
 
-import com.ourvirtualmarket.pages.HomePage;
+import com.ourvirtualmarket.pages.AlternativeSearchButtonPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,7 +8,7 @@ import org.junit.Assert;
 
 public class AlternativeSearchButton_StepDefs {
 
-    HomePage homePage=new HomePage();
+    AlternativeSearchButtonPage alternativeSearchButtonPage=new AlternativeSearchButtonPage();
 
     @When("the user hover the alternative search button")
     public void userHoverTheAlternativeSearchButton() {
@@ -16,12 +16,12 @@ public class AlternativeSearchButton_StepDefs {
 
     @When("the user click the alternative search button")
     public void the_user_click_the_alternative_search_button() {
-        homePage.searchButton.click();
+        alternativeSearchButtonPage.searchButton.click();
     }
 
     @Then("^the user verify that s\\/he see the search pop-up$")
     public void the_user_verify_that_s_he_see_the_search_pop_up() {
-        Assert.assertTrue(homePage.popSearchButton.isDisplayed());
+        Assert.assertTrue(alternativeSearchButtonPage.popSearchButton.isDisplayed());
     }
 
 
@@ -29,7 +29,7 @@ public class AlternativeSearchButton_StepDefs {
 
     @And("the user click the popup search button")
     public void theUserClickThePopupSearchButton() {
-        homePage.popSearchButton.click();
+        alternativeSearchButtonPage.popSearchButton.click();
 
     }
 
@@ -38,25 +38,25 @@ public class AlternativeSearchButton_StepDefs {
     @Then("the user verify that s-he is on the home page")
     public void theUserVerifyThatSHeIsOnTheHomePage() {
 
-        Assert.assertTrue(homePage.homePageHeader.isDisplayed());
+        Assert.assertTrue(alternativeSearchButtonPage.homePageHeader.isDisplayed());
     }
 
     @When("the user click the X button")
     public void theUserClickTheXButton() {
 
-        homePage.popUpCloseButton.click();
+        alternativeSearchButtonPage.popUpCloseButton.click();
     }
 
     @And("the user enters a product name television in the search bar")
     public void theUserEntersAProductNameTelevisionInTheSearchBar() {
-        homePage.popUpSearchButtonField.sendKeys("television");
+        alternativeSearchButtonPage.popUpSearchButtonField.sendKeys("television");
     }
 
     @Then("the user is directed to page that having television products")
     public void theUserIsDirectedToPageThatHavingTelevisionProducts() {
 
-        String actual="television";
-        String expected=homePage.relatedProductPage.getText();
+        String actual="Search - television";
+        String expected=alternativeSearchButtonPage.relatedProductPage.getText();
         Assert.assertEquals(expected,actual);
     }
 }

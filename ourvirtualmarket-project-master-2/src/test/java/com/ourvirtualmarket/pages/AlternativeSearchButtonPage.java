@@ -3,7 +3,7 @@ package com.ourvirtualmarket.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends BasePage{
+ public class AlternativeSearchButtonPage extends BasePage{
     @FindBy(className = "sticky-mysearch")
     public WebElement searchButton;
 
@@ -13,7 +13,7 @@ public class HomePage extends BasePage{
     @FindBy(xpath = "//input[@id='input-search']" )
     public WebElement popUpSearchButtonField;
 
-    @FindBy(xpath = "//input[@placeholder='Keywords']")
+    @FindBy(xpath = "//div[@class='form-group']//h1")
     public WebElement relatedProductPage;
 
     @FindBy(xpath = "(//a[@class='popup-close'])[4]")
