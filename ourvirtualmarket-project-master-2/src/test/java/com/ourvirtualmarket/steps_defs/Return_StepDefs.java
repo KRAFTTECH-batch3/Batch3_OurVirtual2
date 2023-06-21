@@ -19,11 +19,11 @@ public class Return_StepDefs {
 
     @When("the user has bought a product")
     public void the_user_has_bought_a_product() {
- //       returnPage.navigateToAlternativeMenu("Account");
+        //       returnPage.navigateToAlternativeMenu("Account");
         Driver.get().findElement(By.xpath("//a[text()='View your order history']")).click();
 
         String text = Driver.get().findElement(By.xpath("(//tbody//tr//td[text()='#118'])[1]")).getText();
-        if(text==null) productsPage.buyAProduct();
+        if (text == null) productsPage.buyAProduct();
         Assert.assertNotNull(Driver.get().findElement(By.xpath("(//tbody//tr//td[text()='#118'])[1]")));
     }
 
@@ -55,6 +55,7 @@ public class Return_StepDefs {
         BrowserUtils.clickWithJS(returnPage.returnsServiceFromFooterMenu);
         BrowserUtils.waitFor(3);
     }
+
     @Then("the First Name, Last Name and E-Mail fields should be automatically filled")
     public void the_first_name_last_name_and_e_mail_fields_should_be_automatically_filled() {
         returnPage.assertTheFieldsShouldBeAutomaticallyFilled();
@@ -64,6 +65,7 @@ public class Return_StepDefs {
     public void the_user_has_entered_all_the_necessary_information_correctly() {
         returnPage.fillTheReturnForm();
     }
+
     @When("the user clicks the Submit button")
     public void the_user_clicks_the_submit_button() {
         returnPage.submitBtn.click();
@@ -74,9 +76,28 @@ public class Return_StepDefs {
         returnPage.assertSuccessfulReturnMessage();
     }
 
+    @Given("the user form is opened")
+    public void the_user_form_is_opened() {
+        BrowserUtils.clickWithJS(dashboardPage.returnsServiceFromFooterMenu);
+        BrowserUtils.scrollToElement(returnPage.orderID);
+        BrowserUtils.waitFor(3);
+    }
 
+    @When("The submit button is clicked even though all the fields that are already empty are left blank.")
+    public void the_submit_button_is_clicked_even_though_all_the_fields_that_are_already_empty_are_left_blank() {
+        BrowserUtils.clickWithJS(returnPage.submitBtn);
+        BrowserUtils.waitFor(3);
+        BrowserUtils.scrollToElement(returnPage.orderID);
+        BrowserUtils.waitFor(2);
+    }
 
+    @Then("the error message {string} is displayed.")
+    public void the_error_message_is_displayed(String message) {
+        message = "Please complete the form below to request an RMA number.";
+        returnPage.assertErrorMessage(message);
+        returnPage.assertRequiredMessage();
 
+    }
 
 }
 

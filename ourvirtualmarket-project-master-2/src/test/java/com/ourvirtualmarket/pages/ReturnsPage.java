@@ -49,6 +49,12 @@ public class ReturnsPage extends BasePage{
     @FindBy(xpath = "//input[@value='Submit']")
     public WebElement submitBtn;
 
+    @FindBy(xpath = "//p[text()='Please complete the form below to request an RMA number.']")
+    public WebElement errorMessage;
+
+    @FindBy(xpath = "//div[text()='Order ID required!']")
+    public WebElement requiredMessage;
+
     public void saveOrderInformations(){
 
     }
@@ -65,21 +71,15 @@ public class ReturnsPage extends BasePage{
         dashboardPage.navigateToAlternativeMenu("Account");
         WebElement viewOrderBtn = Driver.get().findElement(By.xpath("//a[text()='View your order history']"));
         BrowserUtils.clickWithJS(viewOrderBtn);
-
         orderInformations.put("Order ID",orderHistoryPage.firstOrderID.getText());
         orderInformations.put("Order Date",orderHistoryPage.firstOrderDate.getText());
-
-
         WebElement viewBtn = Driver.get().findElement(By.xpath("//a[@href='https://ourvirtualmarket.com/index.php?route=account/order/info&order_id=118']"));
         BrowserUtils.clickWithJS(viewBtn);
-
         Map<String,String> orderInformations2 = new HashMap<>();
-
-        // product name ve product code locate edilecek. bilgileri orderInformarion2'nin içine atılacak
-        // ve 2 map birleştirilecek. sonrasında form doldurulacak.
-
-//        orderInformations = orderInformationPage.getAllInformation();
-
+        orderInformations2.put("Product Name",orderInformationPage.productName.getText());
+        orderInformations2.put("Product Code",orderInformationPage.productModel.getText());
+        orderInformations.putAll(orderInformations2);
+        BrowserUtils.clickWithJS(returnsServiceFromFooterMenu);
         orderID.sendKeys(orderInformations.get("Order ID"));
         orderDate.sendKeys(orderInformations.get("Order Date"));
         productName.sendKeys(orderInformations.get("Product Name"));
@@ -91,7 +91,17 @@ public class ReturnsPage extends BasePage{
         String currentUrl = Driver.get().getCurrentUrl();
         String expectedURL = "https://ourvirtualmarket.com/index.php?route=account/return/success";
         Assert.assertEquals(expectedURL,currentUrl);
+    }
 
+    public void assertErrorMessage(String message){
+        String actualMessage = errorMessage.getText();
+        Assert.assertEquals(message,actualMessage);
+    }
+
+    public void assertRequiredMessage(){
+        String expectedMessage = "Order ID required!";
+        String actualMessage = requiredMessage.getText();
+        Assert.assertEquals(expectedMessage,actualMessage);
     }
 
 

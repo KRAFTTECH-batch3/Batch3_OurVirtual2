@@ -14,11 +14,8 @@ import java.util.List;
 public class ProductsPage extends BasePage{
     CheckoutPage checkoutPage = new CheckoutPage();
     DashboardPage dashboardPage = new DashboardPage();
-
     SoftAssertions softAssertions = new SoftAssertions();
-
     String expectedProductName;
-
     @FindBy(xpath = "(//input[@value='Buy Now'])[1]")
     public WebElement buyNowBtn;
 
