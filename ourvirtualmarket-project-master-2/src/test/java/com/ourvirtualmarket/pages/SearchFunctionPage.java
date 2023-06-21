@@ -16,4 +16,5 @@ public class SearchFunctionPage extends BasePage {
 
     @FindBy(xpath = "(//input[@type='text'])[3]")
     public WebElement searchOrderText;
+    
 }
