@@ -1,5 +1,5 @@
 
-  @B3VIR2-216
+  @B3VIR2-216 @regression
 
 Feature: Alternative search button feature
 
