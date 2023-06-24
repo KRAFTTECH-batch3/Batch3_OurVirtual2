@@ -1,4 +1,4 @@
-@logout @B3VIR2-221
+@logout @B3VIR2-221 @regression
 Feature: Logout Test Set
   Background: The user should be login
     Given The user is on the login page

@@ -1,10 +1,10 @@
-@logout
+@logout @B3VIR2-221
 Feature: Logout Test Set
   Background: The user should be login
     Given The user is on the login page
     When The user should be able to login with valid "denemekraft@gmail.com" and "krafttech123"
 
-  @B3VIR2-205
+  @TEST_B3VIR2-205 @TESTSET_B3VIR2-204
   Scenario: Logout Directly Test
     Given The user click the Logout button at the top right corner
     When Verify that title is "Account Logout"
@@ -15,7 +15,7 @@ Feature: Logout Test Set
     And Verify that Logout button is Not visible
 
 
-  @B3VIR2-209
+  @TEST_B3VIR2-209 @TESTSET_B3VIR2-204
   Scenario: Logout Directly Test - 2
     Given The user click the Logout button at the down right of the page
     When Verify that title is "Account Logout"
@@ -26,7 +26,7 @@ Feature: Logout Test Set
     And Verify that Logout button is Not visible
 
 
-  @B3VIR2-210
+  @TEST_B3VIR2-210 @TESTSET_B3VIR2-204
   Scenario: Logout Test After add an Item to Cart
     Given The user go to the "Television" module
     And The user select the "Cello C3220G 32\" LED-backlit LCD TV" product
@@ -41,7 +41,7 @@ Feature: Logout Test Set
     Then Verify that My cart is empty
     Then Verify that Logout button is Not visible
 
-  @B3VIR2-211
+  @TEST_B3VIR2-211 @TESTSET_B3VIR2-204
   Scenario:  Logout Test When at Shopping Cart
     Given The user go to the "Networking" module
     And  The user hover the "Belkin - Network device mounting bracket" and click the Add to Cart button on the product
@@ -55,7 +55,7 @@ Feature: Logout Test Set
     Then Verify that Shopping cart page is NOT visible
     Then Verify that Logout button is Not visible
 
-  @B3VIR2-212
+  @TEST_B3VIR2-212 @TESTSET_B3VIR2-204
   Scenario: Logout Test When at My Account Information Page
     Given Click the "Edit your account information" button
     Given Verify that First Name "deneme", Last Name "kraft", email "denemekraft@gmail.com" and Telephone "5425425425"

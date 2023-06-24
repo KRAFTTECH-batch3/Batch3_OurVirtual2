@@ -1,7 +1,7 @@
 @us_20 @B3VIR2-213
 Feature: US 20: Return - As a user, I should be able to create a return request for any product that I bought.
 
-  #@PRECOND_B3VIR2-170
+  #@PRECOND_B3VIR2-170 @smoke @regression
   Background:
     Given The user on the home page
     When The user close the pop-up
