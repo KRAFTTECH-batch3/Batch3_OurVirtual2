@@ -1,4 +1,4 @@
-@B3VIR2-217
+@B3VIR2-217 @smoke @regression
 Feature: search function
 
   Background:

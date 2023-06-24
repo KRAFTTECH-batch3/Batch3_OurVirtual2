@@ -1,4 +1,4 @@
-@B3VIR2-222
+@B3VIR2-222 @smoke @regression
 Feature: Add to Cart
 
   Background:

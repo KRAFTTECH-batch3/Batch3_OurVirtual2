@@ -1,4 +1,4 @@
-@B3VIR2-214
+@B3VIR2-214 @regression
 Feature: Go to top page with button
 
   Background: Go to home page
